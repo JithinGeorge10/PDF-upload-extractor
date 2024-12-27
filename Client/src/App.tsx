@@ -35,6 +35,7 @@ const App: React.FC = () => {
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then((res) => {
+          console.log(res.data.filePath)
           setServerPdfFile(res.data.filePath);
         });
     } catch (error) {
