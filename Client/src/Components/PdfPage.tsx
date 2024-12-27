@@ -192,7 +192,7 @@ const PdfPage: React.FC<PdfPageProps> = ({ pdfPath }) => {
                         </div>
                     )}
 
-                    <div className="hidden sm:flex sm:w-1/4 md:w-1/2 bg-gray-100 flex-col items-center">
+                    <div className="hidden sm:flex sm:w-1/4 md:w-1/2 bg-black-100 flex-col items-center">
                         <h1 className="text-xl md:text-2xl font-semibold mt-4">Preview</h1>
                         {selectedImage && (
                             <div className="flex items-center space-x-5 justify-center mt-4 p-4">

@@ -45,37 +45,39 @@ const App: React.FC = () => {
 
   return (
     <>
+     
+    <div className="h-screen flex items-center justify-center">
+      
       {!serverPdfFile ? (
-        <div className="flex flex-col items-center justify-center">
-          <div className="space-y-4 mt-20 px-4 w-full max-w-md text-center">
-            <h1 className="font-bold text-2xl sm:text-4xl text-red-500">
-              Extract PDF Online
-            </h1>
-            <p className="text-white text-sm sm:text-lg mt-2">
-              Extract the specific pages you need from your PDF instantly
-            </p>
-            <input
-              id="fileupload"
-              type="file"
-              ref={fileInputRef}
-              accept="application/pdf"
-              className="hidden"
-              onChange={handleFileChange}
-              required
-            />
-            <button
-              className="bg-red-600 hover:bg-red-700 text-white text-sm sm:text-base px-4 py-2 rounded mt-4"
-              onClick={handleButtonClick}
-            >
-              Upload PDF
-            </button>
-          </div>
+        <div className="space-y-4 px-4 w-full max-w-md text-center">
+          <h1 className="font-bold text-2xl sm:text-4xl text-red-500">
+          Online PDF Extraction
+          </h1>
+          <p className="text-white text-sm sm:text-lg mt-2">
+          Instantly extract the pages you need from your PDF.
+          </p>
+          <input
+            id="fileupload"
+            type="file"
+            ref={fileInputRef}
+            accept="application/pdf"
+            className="hidden"
+            onChange={handleFileChange}
+            required
+          />
+          <button
+            className="bg-red-600 hover:bg-red-700 text-white text-sm sm:text-base px-4 py-2 rounded mt-4"
+            onClick={handleButtonClick}
+          >
+            Upload PDF
+          </button>
         </div>
-      ) :
-      (<div className="flex flex-col">
-        <PdfPage pdfPath={serverPdfFile} />
-      </div>)
-      }
+      ) : (
+        <div className="flex flex-col">
+          <PdfPage pdfPath={serverPdfFile} />
+        </div>
+      )}
+    </div>
     </>
   );
 };
