@@ -15,7 +15,7 @@ app.use(cors({
     methods:['GET','POST'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true 
-}))
+})) 
 app.use(morgan("dev"));
 app.use('/uploads', express.static(path.join(__dirname, '..','uploads')));
 
